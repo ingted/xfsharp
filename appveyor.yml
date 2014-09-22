@@ -2,5 +2,5 @@ branches:
   only:
     - master
 build_script:
-  - cmd: .\build.cmd
+  - cmd: build.cmd
 test: off
