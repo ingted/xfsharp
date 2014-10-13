@@ -14,10 +14,12 @@ let allDirs =
 
 let exampleFiles = allDirs |> Array.map(fun i -> i.FullName) |> Array.toList
 
-Target "Default" (fun _ ->
+Target "Compile" (fun _ ->
     exampleFiles |> Fsc(fun param -> { param with FscTarget = Library
                                                   References = [nunitRef]
                                                   Output = "Example.dll" })
 )
 
-RunTargetOrDefault "Default"
+//Target "Run Tests" (fun _ -> _)
+
+RunTargetOrDefault "Compile"
